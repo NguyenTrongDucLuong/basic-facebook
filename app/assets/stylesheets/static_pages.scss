@@ -1,0 +1,29 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+    background-color: #4267b2;
+
+    ul{
+        margin-right: 70px;
+        a{
+            width: 90px
+        }
+    } 
+}
+.vertical-divider{
+    background-color: #3a5b9f;
+    width: 1px;
+    height: 30px
+}
+footer{
+    border-top: 1px solid #bdcede;
+    project-info{
+        color: #7f8890;
+    }
+}
+.jumbotron{
+    a{
+        overflow: hidden;
+    }
+}

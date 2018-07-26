@@ -1,0 +1,27 @@
+<header class="navbar navbar-expand-sm navbar-light">
+    <%= link_to "BASIC FACEBOOK", root_path, class: "navbar-brand text-white font-weight-bold" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <% if !logged_in? %>
+                <li class="nav-item"><%= link_to "Log In", login_path , class: "btn mr-1 text-white"%></li>
+                <div class="vertical-divider my-auto"></div>
+                <li class="nav-item"><%= link_to "Sign Up", signup_path, class: "btn ml-1 text-white" %></li>
+            <% else %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle w-100" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-item"><%= link_to "Log Out", logout_path,method: :delete , class: "btn ml-1" %></div>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-item"><%= link_to "Profile", user_path(get_current_user), class: "btn ml-1"  %></div>
+                        <div class="dropdown-item"><%= link_to "Settings", edit_user_path(get_current_user), class: "btn ml-1" %></div>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</header>

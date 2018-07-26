@@ -1,0 +1,14 @@
+<% provide(:title, "Log in") %>
+<h1 class="display-4 text-center">Log in</h1>
+<%= form_for(:session,url: login_path,html: {class: "justify-form mx-auto"}) do |f| %>
+    <div class="row my-4 align-items-center">
+        <div class="col-sm-1"><%= f.label :email, image_tag("email-image.svg") %></div>
+        <div class="col-sm-11"><%= f.email_field :email, class: "form-control form-control-lg" %></div>
+    </div>
+    <div class="row mt-4 mb-2 align-items-center">
+        <div class="col-sm-1"><%= f.label :password, image_tag("password-image.svg") %></div>
+        <div class="col-sm-11"><%= f.password_field :password, class: "form-control form-control-lg" %></div>
+    </div>
+    <p>New user? <%= link_to "Sign up here", signup_path %></p>
+    <%= f.submit "Log in", class: "btn btn-lg btn-primary d-block mx-auto" %>
+<% end %>

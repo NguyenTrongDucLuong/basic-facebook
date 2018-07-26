@@ -1,0 +1,28 @@
+<% provide(:title, "Edit user") %>
+<h1 class="display-4 text-center">Update your profile</h1>
+<div class="justify-form mx-auto">
+<%= form_for(@user) do |f|  %>
+    <%= render 'shared/error_messages' %>
+    <div class="row my-4 align-items-center">
+        <div class="col-sm-1"><%= f.label :name, image_tag("user-image.svg") %></div>
+        <div class="col-sm-11"><%= f.text_field :name , class: "form-control form-control-lg" %></div>
+    </div>
+    <div class="row my-4 align-items-center">
+        <div class="col-sm-1"><%= f.label :email, image_tag("email-image.svg") %></div>
+        <div class="col-sm-11"><%= f.email_field :email, class: "form-control form-control-lg" %></div>
+    </div>
+    <div class="row my-4 align-items-center">
+        <div class="col-sm-1"><%= f.label :password, image_tag("password-image.svg") %></div>
+        <div class="col-sm-11"><%= f.password_field :password, class: "form-control form-control-lg" %></div>
+    </div>
+    <div class="row my-4 align-items-center">
+        <div class="col-sm-1"><%= f.label :password_confirmation, image_tag("password-image.svg") %></div>
+        <div class="col-sm-11"><%= f.password_field :password_confirmation, class: "form-control form-control-lg" %></div>
+    </div>
+    <%= f.submit "Save changes",class: "btn btn-lg btn-primary d-block mx-auto" %>
+<% end %>
+<div class="gravatar_edit">
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails" target="_blank">change</a>
+</div>
+</div>
