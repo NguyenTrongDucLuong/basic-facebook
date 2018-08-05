@@ -1,21 +1,13 @@
 <% provide(:title,@user.name) %>
 <div class="row border border-left-0 w-75 ml-4  profile">
-    <div class="col-sm-2 ml-0 pl-0"><%= gravatar_for(@user,size: 200) %></div>
-    <div class="col-sm-10 round">
-        <p class="text-center name py-4"><%= @user.name %></p>
-        <div class="row">
-            <div class="col-sm  text-center">
-                <p class="status mb-2">Posts</p>
-                <div class="data-value">0</div>
-            </div>
-            <div class="col-sm  text-center">
-                <p class="status mb-2">Followings</p>
-                <div class="data-value">0</div>
-            </div>
-            <div class="col-sm  text-center">
-                <p class="status mb-2">Followers</p>
-                <div class="data-value">0</div>
-            </div>
-        </div>
-    </div>
+    <div class="col-sm-3 ml-0 pl-0"><%= gravatar_for(@user,size: 200) %></div>
+    <div class="col-sm-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 </div>

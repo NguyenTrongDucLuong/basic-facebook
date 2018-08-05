@@ -1,14 +1,10 @@
 <% provide(:title, "Log in") %>
-<h1 class="display-4 text-center">Log in</h1>
-<%= form_for(:session,url: login_path,html: {class: "justify-form mx-auto"}) do |f| %>
-    <div class="row my-4 align-items-center">
-        <div class="col-sm-1"><%= f.label :email, image_tag("email-image.svg") %></div>
-        <div class="col-sm-11"><%= f.email_field :email, class: "form-control form-control-lg" %></div>
-    </div>
-    <div class="row mt-4 mb-2 align-items-center">
-        <div class="col-sm-1"><%= f.label :password, image_tag("password-image.svg") %></div>
-        <div class="col-sm-11"><%= f.password_field :password, class: "form-control form-control-lg" %></div>
-    </div>
-    <p>New user? <%= link_to "Sign up here", signup_path %></p>
-    <%= f.submit "Log in", class: "btn btn-lg btn-primary d-block mx-auto" %>
-<% end %>
+<div class="border border-light justify-form mx-auto formBorder">
+    <h5 class="text-center my-3">Log in to basicFacebook</h5>
+    <%= form_for(:session,url: login_path,html: {class: ""}) do |f| %>
+        <%= f.email_field :email, placeholder: "Email address", class: "my-3 inputForm" %>
+        <%= f.password_field :password, placeholder: "Password", class: "mb-3 inputForm" %>
+        <%= f.submit "Log in", class: "btn btn-primary w-100 font-weight-bold mb-3" %>
+        <p class="text-center small-size"><%= link_to "Forgotten account?" %><span class="px-2"></span><%= link_to "Sign up for basicFacebook", signup_path %></p>
+        <% end %>
+</div>

@@ -4,21 +4,28 @@
     <title><%= addTitle(yield(:title)) %></title>
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container-fluid">
-      <% flash.each do |message_type, message| %>
-        <div class="py-2">
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        </div>
-      <% end %>
-      <div class="py-5"><%= yield %></div>
-    </div>
-    <%= render 'layouts/footer' %>
+    <% if (yield(:title) != "Sign up") %>
+      <%= render 'layouts/header' %>
+      <div class="container-fluid mainBody">
+        <% flash.each do |message_type, message| %>
+          <div class="py-2">
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          </div>
+        <% end %>
+          <div class="py-5"><%= yield %></div>
+      </div>
+      <%= render 'layouts/footer' %>
+    <% else %>
+      <div class="bg">
+        <%= yield %>
+      </div>
+    <% end %>
+
   </body>
 </html>

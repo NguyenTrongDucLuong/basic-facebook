@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :microposts, dependent: :destroy
     attr_accessor :remember_token, :activation_token
     before_save   :downcase_email
     before_create :create_activation_digest  
@@ -12,6 +13,19 @@ class User < ApplicationRecord
                                                     BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
     end
+
+    def self.find_or_create_from_auth_hash(auth)
+      where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
+        user.email = auth.info.email
+        user.picture = auth.info.image
+        user.save!
+      end
+    end
+  
     private
 
       def User.new_token
