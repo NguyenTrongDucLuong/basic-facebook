@@ -15,6 +15,7 @@ gem 'faker',                   '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'will_paginate-bootstrap4'
 gem 'omniauth-google-oauth2'
+gem 'omniauth', '~> 1.8', '>= 1.8.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

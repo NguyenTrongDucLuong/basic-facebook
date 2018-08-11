@@ -9,7 +9,7 @@
                 <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("facebook-brands.svg",style: "vertical-align:middle") %>
                     <span class="mx-2">Facebook</span>
                 </a>
-                <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("google-brands.svg",style: "vertical-align:middle") %>
+                <a href="/auth/google_oauth2" class="w-100 btn btn-outline-primary my-2"><%= image_tag("google-brands.svg",style: "vertical-align:middle") %>
                     <span class="mx-2">Google</span>
                 </a>
                 <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("github-brands.svg",style: "vertical-align:middle") %>
@@ -19,7 +19,7 @@
         </div>
         <div class="col-sm">
             <%= form_for(@user) do |f| %>
-                <%= render 'shared/error_messages' %>
+                <%= render 'shared/error_messages', object: f.object %>
                 <%= f.text_field :name, placeholder: "Full name", class: "my-3 inputForm" %>
                 <%= f.email_field :email, placeholder: "Email address", class: "mb-3 inputForm" %>
                 <%= f.password_field :password, placeholder: "New password", class: "mb-3 inputForm" %>

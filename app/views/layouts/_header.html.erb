@@ -17,8 +17,8 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div class="dropdown-item"><%= link_to "Log Out", logout_path,method: :delete , class: "btn ml-1" %></div>
                         <div class="dropdown-divider"></div>
-                        <div class="dropdown-item"><%= link_to "Profile", user_path(get_current_user), class: "btn ml-1"  %></div>
-                        <div class="dropdown-item"><%= link_to "Settings", edit_user_path(get_current_user), class: "btn ml-1" %></div>
+                        <div class="dropdown-item"><%= link_to "Profile", user_path(current_user), class: "btn ml-1"  %></div>
+                        <div class="dropdown-item"><%= link_to "Settings", edit_user_path(current_user), class: "btn ml-1" %></div>
                     </div>
                 </li>
             <% end %>

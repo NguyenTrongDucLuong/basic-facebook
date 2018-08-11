@@ -2,7 +2,7 @@
 <h1 class="display-4 text-center">Update your profile</h1>
 <div class="justify-form mx-auto">
 <%= form_for(@user) do |f|  %>
-    <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
     <div class="row my-4 align-items-center">
         <div class="col-sm-1"><%= f.label :name, image_tag("user-image.svg") %></div>
         <div class="col-sm-11"><%= f.text_field :name , class: "form-control form-control-lg" %></div>
