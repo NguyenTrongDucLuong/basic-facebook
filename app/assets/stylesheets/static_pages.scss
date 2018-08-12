@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header{
     background-color: #4267b2;
-
+    height: 40px;
     ul{
         margin-right: 70px;
         a{
@@ -27,6 +27,7 @@ header{
 
 .mainBody{
     background-color: #e8ebee;
+    height: 85%;
 }
 .vertical-divider{
     background-color: #3a5b9f;
@@ -37,6 +38,7 @@ footer{
     border-top: 1px solid #bdcede;
     project-info{
         color: #7f8890;
+        vertical-align: middle;
     }
 }
 .jumbotron{
