@@ -10,21 +10,19 @@
   </head>
 
   <body>
-    <% if (yield(:title) != "Sign up") %>
+    <% if yield(:title) != "Sign up" && yield(:title) != "Log in" %>
       <%= render 'layouts/header' %>
-      <div class="container-fluid mainBody">
+      <div class="container-fluid mainBody px-0">
         <% flash.each do |message_type, message| %>
           <div class="py-2">
             <div class="alert alert-<%= message_type %>"><%= message %></div>
           </div>
         <% end %>
-          <div class="py-5"><%= yield %></div>
+          <div class=""><%= yield %></div>
       </div>
       <%= render 'layouts/footer' %>
     <% else %>
-      <div class="bg">
-        <%= yield %>
-      </div>
+      <%= yield %>
     <% end %>
 
   </body>

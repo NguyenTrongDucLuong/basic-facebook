@@ -15,13 +15,14 @@
     </div>
   </div>
 <% else %>
-    <div class="jumbotron w-75 mx-auto bg-light">
-        <h1 class="display-4 text-center">Welcome to the basic facebook</h1>
-        <p class="lead text-center">This is a basic version of facebook, i made this for the purpose of learning about rails, the source code is available on github</p>
-        <hr class="my-4">
-        <div class="buttonWrapper w-25 d-block mx-auto">
+    <div id="mainPage">
+      <div class="pageWrapper">
+        <h1 class="text-center">BASIC FACEBOOK</p>
+        <p>basically our website, just like its name, is a basic version of facebook, but with your contibution it will become better and better every time</p>
+        <div class="buttonWrapper w-50 mx-auto">
           <div class="insider"></div>
-          <%= link_to "Sign up now", signup_path, class: "  " %>
+          <%= link_to "Sign up now", signup_path %>
         </div>
+      </div>
     </div>
 <% end %>

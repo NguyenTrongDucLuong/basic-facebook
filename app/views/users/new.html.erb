@@ -1,31 +1,33 @@
 <% provide(:title,"Sign up") %>
-<div class="border border-light justify-form mx-auto incMargin narrowPadding formBorder">
-    <h3 class="text-center my-3 display-4">Basic Facebook</h3>
-    <div class="row">
-        <div class="col-sm">
-            <div class="mt-3">
-                <p class="text-center my-2">Or connect with</p>
-                <div class="borderBottom"></div>
-                <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("facebook-brands.svg",style: "vertical-align:middle") %>
-                    <span class="mx-2">Facebook</span>
-                </a>
-                <a href="/auth/google_oauth2" class="w-100 btn btn-outline-primary my-2"><%= image_tag("google-brands.svg",style: "vertical-align:middle") %>
-                    <span class="mx-2">Google</span>
-                </a>
-                <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("github-brands.svg",style: "vertical-align:middle") %>
-                    <span class="mx-2">Github</span>
-                </a>
+<div class="background-picture">
+    <div class="border border-light justify-form mx-auto incMargin narrowPadding formBorder">
+        <h3 class="text-center my-3 display-4">Basic Facebook</h3>
+        <div class="row">
+            <div class="col-sm">
+                <div class="mt-3">
+                    <p class="text-center my-2">Or connect with</p>
+                    <div class="borderBottom"></div>
+                    <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("facebook-brands.svg",style: "vertical-align:middle") %>
+                        <span class="mx-2">Facebook</span>
+                    </a>
+                    <a href="/auth/google_oauth2" class="w-100 btn btn-outline-primary my-2"><%= image_tag("google-brands.svg",style: "vertical-align:middle") %>
+                        <span class="mx-2">Google</span>
+                    </a>
+                    <a href="#" class="w-100 btn btn-outline-primary my-2"><%= image_tag("github-brands.svg",style: "vertical-align:middle") %>
+                        <span class="mx-2">Github</span>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-sm">
-            <%= form_for(@user) do |f| %>
-                <%= render 'shared/error_messages', object: f.object %>
-                <%= f.text_field :name, placeholder: "Full name", class: "my-3 inputForm" %>
-                <%= f.email_field :email, placeholder: "Email address", class: "mb-3 inputForm" %>
-                <%= f.password_field :password, placeholder: "New password", class: "mb-3 inputForm" %>
-                <%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "mb-3 inputForm" %>
-                <%= f.submit "Sign up", class: "btn btn-primary w-100 font-weight-bold" %>
-            <% end %>
+            <div class="col-sm">
+                <%= form_for(@user) do |f| %>
+                    <%= render 'shared/error_messages', object: f.object %>
+                    <%= f.text_field :name, placeholder: "Full name", class: "my-3 inputForm" %>
+                    <%= f.email_field :email, placeholder: "Email address", class: "mb-3 inputForm" %>
+                    <%= f.password_field :password, placeholder: "New password", class: "mb-3 inputForm" %>
+                    <%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "mb-3 inputForm" %>
+                    <%= f.submit "Sign up", class: "btn btn-primary w-100 font-weight-bold" %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
