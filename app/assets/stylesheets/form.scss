@@ -1,0 +1,17 @@
+form{
+    overflow: hidden;
+    .input{
+        border: none;
+        background: #333;
+        color: #5c5953;
+        padding-left: 10px;
+        display: block;
+        height: 37px;
+        font-size: 15px;    
+        margin: 15px auto;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid #bfa0a0;
+        }
+    }
+}

@@ -1,10 +1,18 @@
 <% provide(:title, "Log in") %>
-<div class="border border-light justify-form mx-auto formBorder">
-    <h5 class="text-center my-3">Log in to basicFacebook</h5>
-    <%= form_for(:session,url: login_path,html: {class: ""}) do |f| %>
-        <%= f.email_field :email, placeholder: "Email address", class: "my-3 inputForm" %>
-        <%= f.password_field :password, placeholder: "Password", class: "mb-3 inputForm" %>
-        <%= f.submit "Log in", class: "btn btn-primary w-100 font-weight-bold mb-3" %>
-        <p class="text-center small-size"><%= link_to "Forgotten account?" %><span class="px-2"></span><%= link_to "Sign up for basicFacebook", signup_path %></p>
-        <% end %>
+<div>testing</div>
+<div class="modal-background">
+    <div class="modal-container">
+        <span class="close">&times;</span>
+        <div class="modal-info">
+            <div class="header">
+                <p>Log in</p>
+            </div>
+            <%= form_for(:session,url: login_path) do |f| %>
+                <%= f.email_field :email, placeholder: "Email address", class: "input" %>
+                <%= f.password_field :password, placeholder: "Password", class: "input" %>
+                <%= f.submit "Log in", class: "button" %>
+                <p><%= link_to "Forgotten account?" %><span></span><%= link_to "Sign up for basicFacebook", signup_path %></p>
+            <% end %>
+        </div>
+    </div>
 </div>

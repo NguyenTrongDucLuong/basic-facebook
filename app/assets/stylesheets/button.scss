@@ -1,0 +1,13 @@
+.button{
+    border: none;
+    background-color: #222;
+    padding: 13px 35px;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    &:focus{
+        outline: none;
+    }
+}
